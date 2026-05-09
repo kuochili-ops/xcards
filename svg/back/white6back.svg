@@ -1,48 +1,52 @@
 <svg width="400" height="560" viewBox="0 0 400 560" xmlns="http://www.w3.org/2000/svg">
-  <!-- 牌背底色 (Bicycle 經典深藍色調) -->
+  <!-- 牌背底色 -->
   <rect width="400" height="560" rx="20" fill="#0E2B58" />
+  <rect x="20" y="20" width="360" height="520" rx="12" fill="none" stroke="white" stroke-width="6" />
   
-  <!-- 白色邊框 -->
-  <rect x="20" y="20" width="360" height="520" rx="12" fill="none" stroke="white" stroke-width="8" />
-  
-  <!-- 內部裝飾網格紋理 -->
-  <defs>
-    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-    </pattern>
-  </defs>
-  <rect x="30" y="30" width="340" height="500" rx="8" fill="url(#grid)" />
-
-  <!-- 中央對稱裝飾區域 -->
   <g transform="translate(200, 280)">
-    <!-- 中心圓框 -->
-    <circle r="90" fill="none" stroke="white" stroke-width="2" opacity="0.8" />
-    <circle r="82" fill="none" stroke="white" stroke-width="4" />
-    
-    <!-- 白六側面剪影 (根據 image_5.png 繪製) -->
-    <!-- 上方正向剪影 -->
-    <g transform="translate(0, -5) scale(0.8)">
-        <path d="M-30,20 Q-35,0 -20,-25 L-15,-50 L0,-30 L15,-50 L20,-25 Q35,0 30,20 Z" fill="white" /> <!-- 招牌尖耳朵 -->
-        <circle cx="0" cy="15" r="35" fill="white" /> <!-- 頭部輪廓 -->
-        <path d="M-35,15 Q0,45 35,15" fill="none" stroke="#0E2B58" stroke-width="3" /> <!-- 下巴線條 -->
-    </g>
-    
-    <!-- 下方反向剪影 (對稱設計) -->
-    <g transform="rotate(180) translate(0, -5) scale(0.8)">
-        <path d="M-30,20 Q-35,0 -20,-25 L-15,-50 L0,-30 L15,-50 L20,-25 Q35,0 30,20 Z" fill="white" opacity="0.7" />
-        <circle cx="0" cy="15" r="35" fill="white" opacity="0.7" />
+    <!-- 雙向對稱設計：上方正向 -->
+    <g transform="translate(0, -110)">
+      <circle r="85" fill="none" stroke="white" stroke-width="2" opacity="0.5" />
+      
+      <!-- 白六側臉剪影 -->
+      <g transform="translate(-45, -45) scale(1.1)">
+        <!-- 頸部與頭部本體 -->
+        <path d="M10,80 Q25,85 45,70 T65,30 Q65,10 50,5 T25,5 Q10,10 5,30 Z" fill="white" />
+        <!-- 招牌立耳 -->
+        <path d="M30,10 L38,-30 L52,5 Z" fill="white" />
+        <!-- 吻部/長鼻子 (參考 image_5.png) -->
+        <path d="M60,25 L95,38 Q100,42 95,48 L65,55 Z" fill="white" />
+        <!-- 黑色小鼻子 -->
+        <circle cx="95" cy="41" r="3" fill="#0E2B58" />
+        <!-- 眼睛 -->
+        <circle cx="55" cy="28" r="2.5" fill="#0E2B58" />
+        <!-- 桃紅色項圈細節 -->
+        <path d="M12,65 Q35,78 62,58" fill="none" stroke="#FF3399" stroke-width="5" stroke-linecap="round" />
+      </g>
+      
+      <text y="110" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold" font-size="14" letter-spacing="3">WHITE SIX</text>
     </g>
 
-    <!-- 四角花飾 (模擬 Bicycle 風格) -->
-    <g opacity="0.6">
-        <path d="M-140,-220 Q-100,-220 -100,-180" fill="none" stroke="white" stroke-width="2" />
-        <path d="M140,-220 Q100,-220 100,-180" fill="none" stroke="white" stroke-width="2" />
-        <path d="M-140,220 Q-100,220 -100,180" fill="none" stroke="white" stroke-width="2" />
-        <path d="M140,220 Q100,220 100,180" fill="none" stroke="white" stroke-width="2" />
+    <!-- 雙向對稱設計：下方反向 -->
+    <g transform="rotate(180) translate(0, -110)">
+      <circle r="85" fill="none" stroke="white" stroke-width="2" opacity="0.5" />
+      
+      <g transform="translate(-45, -45) scale(1.1)">
+        <path d="M10,80 Q25,85 45,70 T65,30 Q65,10 50,5 T25,5 Q10,10 5,30 Z" fill="white" />
+        <path d="M30,10 L38,-30 L52,5 Z" fill="white" />
+        <path d="M60,25 L95,38 Q100,42 95,48 L65,55 Z" fill="white" />
+        <circle cx="95" cy="41" r="3" fill="#0E2B58" />
+        <circle cx="55" cy="28" r="2.5" fill="#0E2B58" />
+        <path d="M12,65 Q35,78 62,58" fill="none" stroke="#FF3399" stroke-width="5" stroke-linecap="round" />
+      </g>
+      
+      <text y="110" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold" font-size="14" letter-spacing="3">WHITE SIX</text>
     </g>
-    
-    <!-- 文字標識 -->
-    <text y="120" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold" font-size="16" letter-spacing="4">WHITE SIX</text>
-    <text y="-110" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold" font-size="16" letter-spacing="4" transform="rotate(180, 0, -110)">WHITE SIX</text>
+
+    <!-- 裝飾曲線 -->
+    <path d="M-150,-230 Q-150,-250 -130,-250" fill="none" stroke="white" stroke-width="2" opacity="0.6" />
+    <path d="M150,-230 Q150,-250 130,-250" fill="none" stroke="white" stroke-width="2" opacity="0.6" />
+    <path d="M-150,230 Q-150,250 -130,250" fill="none" stroke="white" stroke-width="2" opacity="0.6" />
+    <path d="M150,230 Q150,250 130,250" fill="none" stroke="white" stroke-width="2" opacity="0.6" />
   </g>
 </svg>
