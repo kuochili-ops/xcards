@@ -1,30 +1,43 @@
 <svg width="250" height="350" viewBox="0 0 250 350" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景與外框 -->
   <rect width="250" height="350" rx="15" fill="#FFFFFF" stroke="#2D245F" stroke-width="2"/>
   
+  <!-- 內層裝飾邊緣 (虛線) -->
   <rect x="10" y="10" width="230" height="330" rx="10" fill="none" stroke="#2D245F" stroke-width="1" stroke-dasharray="2,2"/>
 
+  <!-- 八角形核心容器框架 -->
   <path d="M75 30 L175 30 L220 75 L220 275 L175 320 L75 320 L30 275 L30 75 Z" 
         fill="none" stroke="#2D245F" stroke-width="3"/>
   
+  <!-- 蔓藤花紋填充 (與第一版相同) -->
   <defs>
     <pattern id="scrollWork" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M20 0 Q25 10 20 20 T20 40 M0 20 Q10 15 20 20 T40 20" 
             fill="none" stroke="#2D245F" stroke-width="0.5" opacity="0.6"/>
-      <circle cx="20" cy="20" r="2" fill="#2D245F" opacity="0.4"/>
     </pattern>
   </defs>
-  
   <path d="M75 35 L175 35 L215 75 L215 275 L175 315 L75 315 L35 275 L35 75 Z" 
-        fill="url(#scrollWork)" />
+        fill="url(#scrollWork)" opacity="0.8"/>
 
+  <!-- **新增：中央的狗狗圖案 (臺灣犬剪影)** -->
+  <!-- 我們使用一個簡單的圓形作為背景，讓狗狗剪影更顯眼，並整合原圖的細線描繪風格 -->
   <g transform="translate(125, 175)">
-    <path d="M-30 -12 L-12 -30 L12 -30 L30 -12 L30 12 L12 30 L-12 30 L-30 12 Z" 
-          fill="#FFFFFF" stroke="#2D245F" stroke-width="2"/>
-    <circle r="8" fill="none" stroke="#2D245F" stroke-width="1.5"/>
-    <path d="M0 -15 L0 15 M-15 0 L15 0 M-10 -10 L10 10 M-10 10 L10 -10" 
-          stroke="#2D245F" stroke-width="1"/>
+    <!-- 圓形遮罩背景 -->
+    <circle r="40" fill="#FFFFFF" stroke="#2D245F" stroke-width="1.5"/>
+    
+    <!-- 臺灣犬剪影 (簡化描繪) -->
+    <!-- path data: (x1 y1 L x2 y2...) 這是一個示意性的簡化形狀 -->
+    <path d="M-15 -35 Q-18 -32 -18 -28 Q-20 -25 -15 -20 L-10 -15 Q-5 -10 5 -10 
+             L15 -10 Q20 -10 22 -15 Q25 -20 20 -25 Q18 -28 15 -30 
+             L5 -35 Q-5 -38 -15 -35 Z
+             M-15 -20 Q-25 -15 -25 0 Q-25 15 -15 20 
+             L-5 30 Q5 35 15 30 L20 25 Q28 15 28 0 Q28 -15 20 -25 
+             L-5 -30 Q-10 -28 -15 -20 Z
+             M-10 10 L-12 35 M0 10 L0 35 M10 10 L12 35" 
+          fill="none" stroke="#2D245F" stroke-width="2" stroke-linecap="round"/>
   </g>
 
+  <!-- 上下對稱的實心點裝飾 (保留原郵票特色) -->
   <circle cx="125" cy="50" r="5" fill="#2D245F"/>
   <circle cx="125" cy="300" r="5" fill="#2D245F"/>
 </svg>
