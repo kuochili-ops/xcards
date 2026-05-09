@@ -1,49 +1,59 @@
 <svg width="400" height="560" viewBox="0 0 400 560" xmlns="http://www.w3.org/2000/svg">
-  <!-- 定義背景紋理 -->
   <defs>
-    <pattern id="stamp-dots" width="10" height="10" patternUnits="userSpaceOnUse">
-      <circle cx="5" cy="5" r="1" fill="#4B3D7A" opacity="0.2"/>
+    <!-- 高密度幾何底紋：模擬鋼版印刷 -->
+    <pattern id="fine-scroll" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M0,10 Q5,0 10,10 T20,10 M10,0 Q20,5 10,10 T10,20" fill="none" stroke="#4B3D7A" stroke-width="0.2" opacity="0.3"/>
+      <circle cx="10" cy="10" r="0.5" fill="#4B3D7A" opacity="0.5"/>
     </pattern>
+    
+    <!-- 雙色調漸層：增加紙張厚重感 -->
+    <linearGradient id="paper-texture" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f4f4f4"/>
+    </linearGradient>
   </defs>
 
-  <!-- 郵票鋸齒邊緣感背景 -->
-  <rect width="400" height="560" fill="white" />
-  <rect x="10" y="10" width="380" height="540" fill="none" stroke="#4B3D7A" stroke-width="1" stroke-dasharray="2,2" />
+  <!-- 1. 郵票底層與鋸齒邊緣感 -->
+  <rect width="400" height="560" fill="url(#paper-texture)" />
+  <rect x="8" y="8" width="384" height="544" fill="none" stroke="#4B3D7A" stroke-width="0.5" stroke-dasharray="1,3" />
 
-  <!-- 主體深色區域 -->
-  <rect x="25" y="25" width="350" height="450" fill="#4B3D7A" />
+  <!-- 2. 主框架：多重內邊框 -->
+  <rect x="25" y="25" width="350" height="460" fill="none" stroke="#4B3D7A" stroke-width="4" />
+  <rect x="32" y="32" width="336" height="446" fill="none" stroke="#4B3D7A" stroke-width="1" />
   
-  <!-- 八角形裝飾邊框 -->
-  <path d="M 60,40 L 340,40 L 375,75 L 375,425 L 340,460 L 60,460 L 25,425 L 25,75 Z" fill="none" stroke="white" stroke-width="2" />
+  <!-- 3. 底紋層：充滿整個主框 -->
+  <rect x="33" y="33" width="334" height="444" fill="url(#fine-scroll)" />
+
+  <!-- 4. 古典八角窗：模仿 image_8.png 的中央視窗 -->
+  <path d="M 80,50 L 320,50 L 355,85 L 355,410 L 320,445 L 80,445 L 45,410 L 45,85 Z" fill="white" stroke="#4B3D7A" stroke-width="1.5" />
   
-  <!-- 內部藤蔓底紋模擬 (簡化版古典花紋) -->
-  <g opacity="0.3">
-    <pattern id="scrollwork" width="40" height="40" patternUnits="userSpaceOnUse">
-        <path d="M20,0 Q30,10 20,20 T20,40 M0,20 Q10,30 20,20 T40,20" fill="none" stroke="white" stroke-width="0.5"/>
-        <circle cx="20" cy="20" r="2" fill="white"/>
-    </pattern>
-    <path d="M 65,45 L 335,45 L 370,80 L 370,420 L 335,455 L 65,455 L 30,420 L 30,80 Z" fill="url(#scrollwork)" />
+  <!-- 5. 白六全身姿態：模仿郵票中的優雅站姿 (參考 image_8) -->
+  <g transform="translate(100, 150) scale(1.2)" fill="#4B3D7A">
+    <!-- 身體與肌肉線條 -->
+    <path d="M10,120 Q30,125 50,110 T100,100 Q150,100 170,140 L185,135 Q160,80 110,75 T40,85 Q10,95 5,120 Z" opacity="0.9"/>
+    <!-- 四肢：修長有力的台灣犬特徵 -->
+    <path d="M25,120 L20,185 M45,115 L48,180 M145,105 L155,175 M170,135 L180,170" stroke="#4B3D7A" stroke-width="5" stroke-linecap="round"/>
+    <!-- 頭部細節：精確還原 image_5 的尖耳與長吻 -->
+    <g transform="translate(0, 0)">
+        <path d="M5,120 Q-5,100 10,70 T40,65 L35,85 Z" /> <!-- 頸部 -->
+        <path d="M10,70 Q5,40 25,35 T55,55 L45,75 Z" /> <!-- 頭顱 -->
+        <path d="M15,35 L12,0 L28,30 Z" /> <!-- 左立耳 -->
+        <path d="M35,38 L42,2 L55,45 Z" /> <!-- 右立耳 -->
+        <path d="M50,55 L85,65 Q90,68 85,75 L55,80 Z" /> <!-- 長吻部 -->
+        <circle cx="85" cy="68" r="1.5" fill="white" /> <!-- 鼻尖亮點 -->
+    </g>
   </g>
 
-  <!-- 白六的古典風格剪影 (置中對稱設計) -->
-  <g transform="translate(200, 240) scale(1.5)">
-    <!-- 頭部與身體輪廓 -->
-    <path d="M-30,50 Q-25,55 0,40 T30,0 Q30,-20 15,-25 T-5,-25 Q-20,-20 -25,-5 Z" fill="white" />
-    <!-- 招牌立耳 -->
-    <path d="M-15,-25 L-20,-55 L-5,-20 Z" fill="white" />
-    <path d="M5,-25 L12,-55 L20,-20 Z" fill="white" />
-    <!-- 吻部 -->
-    <path d="M15,-5 L45,5 Q50,8 45,15 L15,25 Z" fill="white" />
-    <!-- 黑色細節 -->
-    <circle cx="45" cy="8" r="2" fill="#4B3D7A" /> <!-- 鼻子 -->
-    <circle cx="10" cy="-5" r="2" fill="#4B3D7A" /> <!-- 眼睛 -->
-    <!-- 頸部裝飾線條 -->
-    <path d="M-25,30 Q0,40 25,20" fill="none" stroke="#4B3D7A" stroke-width="1.5" opacity="0.5" />
+  <!-- 6. 底部文字與面額：更嚴謹的排版 -->
+  <g transform="translate(25, 495)">
+    <text x="15" y="30" fill="#4B3D7A" font-family="serif" font-weight="900" font-size="24">中華民國郵票</text>
+    <text x="15" y="48" fill="#4B3D7A" font-family="Arial" font-size="9" font-weight="bold" letter-spacing="0.5">REPUBLIC OF CHINA (TAIWAN)</text>
+    <text x="335" y="42" text-anchor="end" fill="#4B3D7A" font-family="serif" font-weight="900" font-size="45">100</text>
   </g>
-
-  <!-- 下方文字區域 (模仿郵票格式) -->
-  <rect x="25" y="480" width="350" height="60" fill="white" stroke="#4B3D7A" stroke-width="2" />
-  <text x="40" y="515" fill="#4B3D7A" font-family="serif" font-weight="bold" font-size="28">白六占卜</text>
-  <text x="355" y="525" text-anchor="end" fill="#4B3D7A" font-family="Arial" font-weight="bold" font-size="48">100</text>
-  <text x="40" y="535" fill="#4B3D7A" font-family="Arial" font-size="10" letter-spacing="1">WHITE SIX DIVINATION POKER</text>
+  
+  <!-- 內角裝飾花紋 -->
+  <circle cx="45" cy="85" r="3" fill="#4B3D7A"/>
+  <circle cx="355" cy="85" r="3" fill="#4B3D7A"/>
+  <circle cx="45" cy="410" r="3" fill="#4B3D7A"/>
+  <circle cx="355" cy="410" r="3" fill="#4B3D7A"/>
 </svg>
