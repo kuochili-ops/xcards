@@ -1,52 +1,59 @@
 <svg width="400" height="560" viewBox="0 0 400 560" xmlns="http://www.w3.org/2000/svg">
-  <!-- 牌背底色 -->
-  <rect width="400" height="560" rx="20" fill="#0E2B58" />
-  <rect x="20" y="20" width="360" height="520" rx="12" fill="none" stroke="white" stroke-width="6" />
-  
+  <!-- 定義漸層與紋理 -->
+  <defs>
+    <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#163d7a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0b1e3d;stop-opacity:1" />
+    </radialGradient>
+    <!-- 復古網格紋理 -->
+    <pattern id="vintage-grid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 10 M -2 2 L 2 -2 M 8 12 L 12 8" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- 牌背底色與邊框 -->
+  <rect width="400" height="560" rx="20" fill="url(#grad)" />
+  <rect width="400" height="560" rx="20" fill="url(#vintage-grid)" />
+  <rect x="15" y="15" width="370" height="530" rx="15" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+  <rect x="25" y="25" width="350" height="510" rx="12" fill="none" stroke="#ffffff" stroke-width="6" />
+
+  <!-- 中央核心裝飾 -->
   <g transform="translate(200, 280)">
-    <!-- 雙向對稱設計：上方正向 -->
-    <g transform="translate(0, -110)">
-      <circle r="85" fill="none" stroke="white" stroke-width="2" opacity="0.5" />
-      
-      <!-- 白六側臉剪影 -->
-      <g transform="translate(-45, -45) scale(1.1)">
-        <!-- 頸部與頭部本體 -->
-        <path d="M10,80 Q25,85 45,70 T65,30 Q65,10 50,5 T25,5 Q10,10 5,30 Z" fill="white" />
-        <!-- 招牌立耳 -->
-        <path d="M30,10 L38,-30 L52,5 Z" fill="white" />
-        <!-- 吻部/長鼻子 (參考 image_5.png) -->
-        <path d="M60,25 L95,38 Q100,42 95,48 L65,55 Z" fill="white" />
-        <!-- 黑色小鼻子 -->
-        <circle cx="95" cy="41" r="3" fill="#0E2B58" />
-        <!-- 眼睛 -->
-        <circle cx="55" cy="28" r="2.5" fill="#0E2B58" />
-        <!-- 桃紅色項圈細節 -->
-        <path d="M12,65 Q35,78 62,58" fill="none" stroke="#FF3399" stroke-width="5" stroke-linecap="round" />
-      </g>
-      
-      <text y="110" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold" font-size="14" letter-spacing="3">WHITE SIX</text>
+    <!-- 雙向對稱裝飾線條 -->
+    <g id="decor">
+      <path d="M-140,-210 Q-100,-250 0,-210 T140,-210" fill="none" stroke="white" stroke-width="1.5" opacity="0.4"/>
+      <path d="M-120,-180 Q-80,-200 0,-180 T120,-180" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
     </g>
+    <use href="#decor" transform="rotate(180)"/>
 
-    <!-- 雙向對稱設計：下方反向 -->
-    <g transform="rotate(180) translate(0, -110)">
-      <circle r="85" fill="none" stroke="white" stroke-width="2" opacity="0.5" />
-      
-      <g transform="translate(-45, -45) scale(1.1)">
-        <path d="M10,80 Q25,85 45,70 T65,30 Q65,10 50,5 T25,5 Q10,10 5,30 Z" fill="white" />
-        <path d="M30,10 L38,-30 L52,5 Z" fill="white" />
-        <path d="M60,25 L95,38 Q100,42 95,48 L65,55 Z" fill="white" />
-        <circle cx="95" cy="41" r="3" fill="#0E2B58" />
-        <circle cx="55" cy="28" r="2.5" fill="#0E2B58" />
-        <path d="M12,65 Q35,78 62,58" fill="none" stroke="#FF3399" stroke-width="5" stroke-linecap="round" />
-      </g>
-      
-      <text y="110" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold" font-size="14" letter-spacing="3">WHITE SIX</text>
+    <!-- 雙向白六徽章 -->
+    <g id="vignette" transform="translate(0, -100)">
+        <!-- 徽章外框 -->
+        <circle r="75" fill="#0b1e3d" stroke="white" stroke-width="3" />
+        <circle r="68" fill="none" stroke="white" stroke-width="1" opacity="0.5" />
+        
+        <!-- 白六精細側臉 (參考 image_5.png) -->
+        <g transform="translate(-40, -35)">
+            <!-- 頭部與耳朵 -->
+            <path d="M10,65 Q15,70 35,60 T55,25 Q55,5 40,0 T20,0 Q5,5 2,25 Z" fill="white" />
+            <path d="M25,5 L32,-35 L48,2 Z" fill="white" /> <!-- 招牌尖立耳 -->
+            <!-- 吻部 -->
+            <path d="M50,20 L88,32 Q95,35 88,42 L55,50 Z" fill="white" />
+            <circle cx="88" cy="35" r="2.5" fill="#0b1e3d" /> <!-- 小鼻子 -->
+            <circle cx="48" cy="22" r="2" fill="#0b1e3d" /> <!-- 眼睛 -->
+            <!-- 粉紅項圈 (復古色調) -->
+            <path d="M8,55 Q28,68 53,50" fill="none" stroke="#e91e63" stroke-width="4" stroke-linecap="round" />
+        </g>
+        
+        <text y="95" text-anchor="middle" fill="white" font-family="Georgia, serif" font-style="italic" font-size="12" letter-spacing="2" opacity="0.8">White 6 Selection</text>
     </g>
+    
+    <!-- 鏡像徽章 -->
+    <use href="#vignette" transform="rotate(180)"/>
 
-    <!-- 裝飾曲線 -->
-    <path d="M-150,-230 Q-150,-250 -130,-250" fill="none" stroke="white" stroke-width="2" opacity="0.6" />
-    <path d="M150,-230 Q150,-250 130,-250" fill="none" stroke="white" stroke-width="2" opacity="0.6" />
-    <path d="M-150,230 Q-150,250 -130,250" fill="none" stroke="white" stroke-width="2" opacity="0.6" />
-    <path d="M150,230 Q150,250 130,250" fill="none" stroke="white" stroke-width="2" opacity="0.6" />
+    <!-- 中心連結裝飾 -->
+    <circle r="25" fill="#0b1e3d" stroke="white" stroke-width="2"/>
+    <path d="M-15,0 L15,0 M0,-15 L0,15" stroke="white" stroke-width="1" opacity="0.6"/>
+    <text text-anchor="middle" y="5" fill="white" font-family="serif" font-size="10" font-weight="bold">W6</text>
   </g>
 </svg>
