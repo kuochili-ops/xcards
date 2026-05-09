@@ -1,59 +1,49 @@
 <svg width="400" height="560" viewBox="0 0 400 560" xmlns="http://www.w3.org/2000/svg">
-  <!-- 定義漸層與紋理 -->
+  <!-- 定義背景紋理 -->
   <defs>
-    <radialGradient id="grad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#163d7a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0b1e3d;stop-opacity:1" />
-    </radialGradient>
-    <!-- 復古網格紋理 -->
-    <pattern id="vintage-grid" width="10" height="10" patternUnits="userSpaceOnUse">
-      <path d="M 10 0 L 0 10 M -2 2 L 2 -2 M 8 12 L 12 8" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+    <pattern id="stamp-dots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="1" fill="#4B3D7A" opacity="0.2"/>
     </pattern>
   </defs>
 
-  <!-- 牌背底色與邊框 -->
-  <rect width="400" height="560" rx="20" fill="url(#grad)" />
-  <rect width="400" height="560" rx="20" fill="url(#vintage-grid)" />
-  <rect x="15" y="15" width="370" height="530" rx="15" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
-  <rect x="25" y="25" width="350" height="510" rx="12" fill="none" stroke="#ffffff" stroke-width="6" />
+  <!-- 郵票鋸齒邊緣感背景 -->
+  <rect width="400" height="560" fill="white" />
+  <rect x="10" y="10" width="380" height="540" fill="none" stroke="#4B3D7A" stroke-width="1" stroke-dasharray="2,2" />
 
-  <!-- 中央核心裝飾 -->
-  <g transform="translate(200, 280)">
-    <!-- 雙向對稱裝飾線條 -->
-    <g id="decor">
-      <path d="M-140,-210 Q-100,-250 0,-210 T140,-210" fill="none" stroke="white" stroke-width="1.5" opacity="0.4"/>
-      <path d="M-120,-180 Q-80,-200 0,-180 T120,-180" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
-    </g>
-    <use href="#decor" transform="rotate(180)"/>
-
-    <!-- 雙向白六徽章 -->
-    <g id="vignette" transform="translate(0, -100)">
-        <!-- 徽章外框 -->
-        <circle r="75" fill="#0b1e3d" stroke="white" stroke-width="3" />
-        <circle r="68" fill="none" stroke="white" stroke-width="1" opacity="0.5" />
-        
-        <!-- 白六精細側臉 (參考 image_5.png) -->
-        <g transform="translate(-40, -35)">
-            <!-- 頭部與耳朵 -->
-            <path d="M10,65 Q15,70 35,60 T55,25 Q55,5 40,0 T20,0 Q5,5 2,25 Z" fill="white" />
-            <path d="M25,5 L32,-35 L48,2 Z" fill="white" /> <!-- 招牌尖立耳 -->
-            <!-- 吻部 -->
-            <path d="M50,20 L88,32 Q95,35 88,42 L55,50 Z" fill="white" />
-            <circle cx="88" cy="35" r="2.5" fill="#0b1e3d" /> <!-- 小鼻子 -->
-            <circle cx="48" cy="22" r="2" fill="#0b1e3d" /> <!-- 眼睛 -->
-            <!-- 粉紅項圈 (復古色調) -->
-            <path d="M8,55 Q28,68 53,50" fill="none" stroke="#e91e63" stroke-width="4" stroke-linecap="round" />
-        </g>
-        
-        <text y="95" text-anchor="middle" fill="white" font-family="Georgia, serif" font-style="italic" font-size="12" letter-spacing="2" opacity="0.8">White 6 Selection</text>
-    </g>
-    
-    <!-- 鏡像徽章 -->
-    <use href="#vignette" transform="rotate(180)"/>
-
-    <!-- 中心連結裝飾 -->
-    <circle r="25" fill="#0b1e3d" stroke="white" stroke-width="2"/>
-    <path d="M-15,0 L15,0 M0,-15 L0,15" stroke="white" stroke-width="1" opacity="0.6"/>
-    <text text-anchor="middle" y="5" fill="white" font-family="serif" font-size="10" font-weight="bold">W6</text>
+  <!-- 主體深色區域 -->
+  <rect x="25" y="25" width="350" height="450" fill="#4B3D7A" />
+  
+  <!-- 八角形裝飾邊框 -->
+  <path d="M 60,40 L 340,40 L 375,75 L 375,425 L 340,460 L 60,460 L 25,425 L 25,75 Z" fill="none" stroke="white" stroke-width="2" />
+  
+  <!-- 內部藤蔓底紋模擬 (簡化版古典花紋) -->
+  <g opacity="0.3">
+    <pattern id="scrollwork" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M20,0 Q30,10 20,20 T20,40 M0,20 Q10,30 20,20 T40,20" fill="none" stroke="white" stroke-width="0.5"/>
+        <circle cx="20" cy="20" r="2" fill="white"/>
+    </pattern>
+    <path d="M 65,45 L 335,45 L 370,80 L 370,420 L 335,455 L 65,455 L 30,420 L 30,80 Z" fill="url(#scrollwork)" />
   </g>
+
+  <!-- 白六的古典風格剪影 (置中對稱設計) -->
+  <g transform="translate(200, 240) scale(1.5)">
+    <!-- 頭部與身體輪廓 -->
+    <path d="M-30,50 Q-25,55 0,40 T30,0 Q30,-20 15,-25 T-5,-25 Q-20,-20 -25,-5 Z" fill="white" />
+    <!-- 招牌立耳 -->
+    <path d="M-15,-25 L-20,-55 L-5,-20 Z" fill="white" />
+    <path d="M5,-25 L12,-55 L20,-20 Z" fill="white" />
+    <!-- 吻部 -->
+    <path d="M15,-5 L45,5 Q50,8 45,15 L15,25 Z" fill="white" />
+    <!-- 黑色細節 -->
+    <circle cx="45" cy="8" r="2" fill="#4B3D7A" /> <!-- 鼻子 -->
+    <circle cx="10" cy="-5" r="2" fill="#4B3D7A" /> <!-- 眼睛 -->
+    <!-- 頸部裝飾線條 -->
+    <path d="M-25,30 Q0,40 25,20" fill="none" stroke="#4B3D7A" stroke-width="1.5" opacity="0.5" />
+  </g>
+
+  <!-- 下方文字區域 (模仿郵票格式) -->
+  <rect x="25" y="480" width="350" height="60" fill="white" stroke="#4B3D7A" stroke-width="2" />
+  <text x="40" y="515" fill="#4B3D7A" font-family="serif" font-weight="bold" font-size="28">白六占卜</text>
+  <text x="355" y="525" text-anchor="end" fill="#4B3D7A" font-family="Arial" font-weight="bold" font-size="48">100</text>
+  <text x="40" y="535" fill="#4B3D7A" font-family="Arial" font-size="10" letter-spacing="1">WHITE SIX DIVINATION POKER</text>
 </svg>
