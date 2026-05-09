@@ -1,59 +1,30 @@
-<svg width="400" height="560" viewBox="0 0 400 560" xmlns="http://www.w3.org/2000/svg">
+<svg width="250" height="350" viewBox="0 0 250 350" xmlns="http://www.w3.org/2000/svg">
+  <rect width="250" height="350" rx="15" fill="#FFFFFF" stroke="#2D245F" stroke-width="2"/>
+  
+  <rect x="10" y="10" width="230" height="330" rx="10" fill="none" stroke="#2D245F" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <path d="M75 30 L175 30 L220 75 L220 275 L175 320 L75 320 L30 275 L30 75 Z" 
+        fill="none" stroke="#2D245F" stroke-width="3"/>
+  
   <defs>
-    <!-- 高密度幾何底紋：模擬鋼版印刷 -->
-    <pattern id="fine-scroll" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M0,10 Q5,0 10,10 T20,10 M10,0 Q20,5 10,10 T10,20" fill="none" stroke="#4B3D7A" stroke-width="0.2" opacity="0.3"/>
-      <circle cx="10" cy="10" r="0.5" fill="#4B3D7A" opacity="0.5"/>
+    <pattern id="scrollWork" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M20 0 Q25 10 20 20 T20 40 M0 20 Q10 15 20 20 T40 20" 
+            fill="none" stroke="#2D245F" stroke-width="0.5" opacity="0.6"/>
+      <circle cx="20" cy="20" r="2" fill="#2D245F" opacity="0.4"/>
     </pattern>
-    
-    <!-- 雙色調漸層：增加紙張厚重感 -->
-    <linearGradient id="paper-texture" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#f4f4f4"/>
-    </linearGradient>
   </defs>
-
-  <!-- 1. 郵票底層與鋸齒邊緣感 -->
-  <rect width="400" height="560" fill="url(#paper-texture)" />
-  <rect x="8" y="8" width="384" height="544" fill="none" stroke="#4B3D7A" stroke-width="0.5" stroke-dasharray="1,3" />
-
-  <!-- 2. 主框架：多重內邊框 -->
-  <rect x="25" y="25" width="350" height="460" fill="none" stroke="#4B3D7A" stroke-width="4" />
-  <rect x="32" y="32" width="336" height="446" fill="none" stroke="#4B3D7A" stroke-width="1" />
   
-  <!-- 3. 底紋層：充滿整個主框 -->
-  <rect x="33" y="33" width="334" height="444" fill="url(#fine-scroll)" />
+  <path d="M75 35 L175 35 L215 75 L215 275 L175 315 L75 315 L35 275 L35 75 Z" 
+        fill="url(#scrollWork)" />
 
-  <!-- 4. 古典八角窗：模仿 image_8.png 的中央視窗 -->
-  <path d="M 80,50 L 320,50 L 355,85 L 355,410 L 320,445 L 80,445 L 45,410 L 45,85 Z" fill="white" stroke="#4B3D7A" stroke-width="1.5" />
-  
-  <!-- 5. 白六全身姿態：模仿郵票中的優雅站姿 (參考 image_8) -->
-  <g transform="translate(100, 150) scale(1.2)" fill="#4B3D7A">
-    <!-- 身體與肌肉線條 -->
-    <path d="M10,120 Q30,125 50,110 T100,100 Q150,100 170,140 L185,135 Q160,80 110,75 T40,85 Q10,95 5,120 Z" opacity="0.9"/>
-    <!-- 四肢：修長有力的台灣犬特徵 -->
-    <path d="M25,120 L20,185 M45,115 L48,180 M145,105 L155,175 M170,135 L180,170" stroke="#4B3D7A" stroke-width="5" stroke-linecap="round"/>
-    <!-- 頭部細節：精確還原 image_5 的尖耳與長吻 -->
-    <g transform="translate(0, 0)">
-        <path d="M5,120 Q-5,100 10,70 T40,65 L35,85 Z" /> <!-- 頸部 -->
-        <path d="M10,70 Q5,40 25,35 T55,55 L45,75 Z" /> <!-- 頭顱 -->
-        <path d="M15,35 L12,0 L28,30 Z" /> <!-- 左立耳 -->
-        <path d="M35,38 L42,2 L55,45 Z" /> <!-- 右立耳 -->
-        <path d="M50,55 L85,65 Q90,68 85,75 L55,80 Z" /> <!-- 長吻部 -->
-        <circle cx="85" cy="68" r="1.5" fill="white" /> <!-- 鼻尖亮點 -->
-    </g>
+  <g transform="translate(125, 175)">
+    <path d="M-30 -12 L-12 -30 L12 -30 L30 -12 L30 12 L12 30 L-12 30 L-30 12 Z" 
+          fill="#FFFFFF" stroke="#2D245F" stroke-width="2"/>
+    <circle r="8" fill="none" stroke="#2D245F" stroke-width="1.5"/>
+    <path d="M0 -15 L0 15 M-15 0 L15 0 M-10 -10 L10 10 M-10 10 L10 -10" 
+          stroke="#2D245F" stroke-width="1"/>
   </g>
 
-  <!-- 6. 底部文字與面額：更嚴謹的排版 -->
-  <g transform="translate(25, 495)">
-    <text x="15" y="30" fill="#4B3D7A" font-family="serif" font-weight="900" font-size="24">中華民國郵票</text>
-    <text x="15" y="48" fill="#4B3D7A" font-family="Arial" font-size="9" font-weight="bold" letter-spacing="0.5">REPUBLIC OF CHINA (TAIWAN)</text>
-    <text x="335" y="42" text-anchor="end" fill="#4B3D7A" font-family="serif" font-weight="900" font-size="45">100</text>
-  </g>
-  
-  <!-- 內角裝飾花紋 -->
-  <circle cx="45" cy="85" r="3" fill="#4B3D7A"/>
-  <circle cx="355" cy="85" r="3" fill="#4B3D7A"/>
-  <circle cx="45" cy="410" r="3" fill="#4B3D7A"/>
-  <circle cx="355" cy="410" r="3" fill="#4B3D7A"/>
+  <circle cx="125" cy="50" r="5" fill="#2D245F"/>
+  <circle cx="125" cy="300" r="5" fill="#2D245F"/>
 </svg>
