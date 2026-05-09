@@ -1,43 +1,69 @@
-<svg width="250" height="350" viewBox="0 0 250 350" xmlns="http://www.w3.org/2000/svg">
-  <!-- 背景與外框 -->
-  <rect width="250" height="350" rx="15" fill="#FFFFFF" stroke="#2D245F" stroke-width="2"/>
+<svg width="400" height="560" viewBox="0 0 400 560" xmlns="http://www.w3.org/2000/svg">
+  <!-- 撲克牌背景 -->
+  <rect width="400" height="560" rx="20" fill="white" stroke="#2a4b8d" stroke-width="2"/>
   
-  <!-- 內層裝飾邊緣 (虛線) -->
-  <rect x="10" y="10" width="230" height="330" rx="10" fill="none" stroke="#2D245F" stroke-width="1" stroke-dasharray="2,2"/>
-
-  <!-- 八角形核心容器框架 -->
-  <path d="M75 30 L175 30 L220 75 L220 275 L175 320 L75 320 L30 275 L30 75 Z" 
-        fill="none" stroke="#2D245F" stroke-width="3"/>
+  <!-- 內層虛線邊框 -->
+  <rect x="25" y="25" width="350" height="510" rx="15" fill="none" stroke="#2a4b8d" stroke-width="1.5" stroke-dasharray="3,3"/>
   
-  <!-- 蔓藤花紋填充 (與第一版相同) -->
+  <!-- 主要藍色編織圖案區域 (簡化為編織紋理) -->
   <defs>
-    <pattern id="scrollWork" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M20 0 Q25 10 20 20 T20 40 M0 20 Q10 15 20 20 T40 20" 
-            fill="none" stroke="#2D245F" stroke-width="0.5" opacity="0.6"/>
+    <pattern id="basketweave" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 0 5 L 10 5 M 5 0 L 5 10" stroke="#2a4b8d" stroke-width="0.5" fill="none"/>
     </pattern>
   </defs>
-  <path d="M75 35 L175 35 L215 75 L215 275 L175 315 L75 315 L35 275 L35 75 Z" 
-        fill="url(#scrollWork)" opacity="0.8"/>
-
-  <!-- **新增：中央的狗狗圖案 (臺灣犬剪影)** -->
-  <!-- 我們使用一個簡單的圓形作為背景，讓狗狗剪影更顯眼，並整合原圖的細線描繪風格 -->
-  <g transform="translate(125, 175)">
-    <!-- 圓形遮罩背景 -->
-    <circle r="40" fill="#FFFFFF" stroke="#2D245F" stroke-width="1.5"/>
-    
-    <!-- 臺灣犬剪影 (簡化描繪) -->
-    <!-- path data: (x1 y1 L x2 y2...) 這是一個示意性的簡化形狀 -->
-    <path d="M-15 -35 Q-18 -32 -18 -28 Q-20 -25 -15 -20 L-10 -15 Q-5 -10 5 -10 
-             L15 -10 Q20 -10 22 -15 Q25 -20 20 -25 Q18 -28 15 -30 
-             L5 -35 Q-5 -38 -15 -35 Z
-             M-15 -20 Q-25 -15 -25 0 Q-25 15 -15 20 
-             L-5 30 Q5 35 15 30 L20 25 Q28 15 28 0 Q28 -15 20 -25 
-             L-5 -30 Q-10 -28 -15 -20 Z
-             M-10 10 L-12 35 M0 10 L0 35 M10 10 L12 35" 
-          fill="none" stroke="#2D245F" stroke-width="2" stroke-linecap="round"/>
+  <rect x="40" y="40" width="320" height="480" rx="10" fill="url(#basketweave)" stroke="#2a4b8d" stroke-width="2"/>
+  
+  <!-- 中央羅盤玫瑰 (簡化圖案) -->
+  <g transform="translate(200, 280)">
+    <circle r="45" fill="white" stroke="#2a4b8d" stroke-width="2"/>
+    <circle r="40" fill="none" stroke="#2a4b8d" stroke-width="1"/>
+    <!-- 羅盤指針 -->
+    <path d="M 0 -35 L 5 0 L 0 35 L -5 0 Z" fill="#2a4b8d"/>
+    <path d="M -35 0 L 0 -5 L 35 0 L 0 5 Z" fill="#2a4b8d"/>
+    <!-- 對角線指針 -->
+    <path d="M -25 -25 L 0 -3 L 25 25 L 0 3 Z" fill="#2a4b8d" opacity="0.7"/>
+    <path d="M 25 -25 L 3 -0 L -25 25 L -3 0 Z" fill="#2a4b8d" opacity="0.7"/>
+    <!-- 方向文字 (簡化) -->
+    <text x="0" y="-48" text-anchor="middle" font-family="serif" font-size="12" fill="#2a4b8d">N</text>
+    <text x="48" y="4" text-anchor="middle" font-family="serif" font-size="12" fill="#2a4b8d">E</text>
+    <text x="0" y="58" text-anchor="middle" font-family="serif" font-size="12" fill="#2a4b8d">S</text>
+    <text x="-48" y="4" text-anchor="middle" font-family="serif" font-size="12" fill="#2a4b8d">W</text>
   </g>
-
-  <!-- 上下對稱的實心點裝飾 (保留原郵票特色) -->
-  <circle cx="125" cy="50" r="5" fill="#2D245F"/>
-  <circle cx="125" cy="300" r="5" fill="#2D245F"/>
+  
+  <!-- 上方星座 (簡化圖案) -->
+  <g transform="translate(200, 100)">
+    <circle r="25" fill="#2a4b8d"/>
+    <!-- 星星 -->
+    <circle cx="0" cy="-10" r="2" fill="white"/>
+    <circle cx="10" cy="0" r="1.5" fill="white"/>
+    <circle cx="-10" cy="5" r="1.5" fill="white"/>
+    <circle cx="5" cy="12" r="1" fill="white"/>
+    <circle cx="-5" cy="-5" r="1" fill="white"/>
+  </g>
+  
+  <!-- 下方星座 (簡化圖案) -->
+  <g transform="translate(200, 460)">
+    <circle r="25" fill="#2a4b8d"/>
+    <!-- 星星 -->
+    <circle cx="-10" cy="-10" r="2" fill="white"/>
+    <circle cx="0" cy="0" r="1.5" fill="white"/>
+    <circle cx="10" cy="5" r="1.5" fill="white"/>
+    <circle cx="-5" cy="10" r="1" fill="white"/>
+    <circle cx="8" cy="-5" r="1" fill="white"/>
+  </g>
+  
+  <!-- 四角六分儀圖案 (簡化) -->
+  <defs>
+    <g id="sextant_icon">
+      <path d="M 0 0 L 20 0 A 20 20 0 0 1 0 20 Z" fill="none" stroke="#2a4b8d" stroke-width="1.5"/>
+      <circle cx="5" cy="5" r="1" fill="#2a4b8d"/>
+      <line x1="0" y1="0" x2="15" y2="15" stroke="#2a4b8d" stroke-width="1"/>
+    </g>
+  </defs>
+  
+  <use href="#sextant_icon" transform="translate(45, 45) rotate(0)"/>
+  <use href="#sextant_icon" transform="translate(355, 45) rotate(90) scale(-1, 1)"/>
+  <use href="#sextant_icon" transform="translate(45, 515) rotate(-90) scale(1, -1)"/>
+  <use href="#sextant_icon" transform="translate(355, 515) rotate(180)"/>
+  
 </svg>
